@@ -60,7 +60,7 @@ $postdata = json_encode(array(
   "version"=>8,
   "nonce"=>$nonce,
 ));
-//$postdata = json_encode($data);
+
 $sig = base64_encode(hash_hmac("sha256", $postdata, $secret, true));
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://eu-api.coolkit.cc:8080/api/user/login",
